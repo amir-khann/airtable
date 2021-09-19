@@ -1,49 +1,31 @@
-require("dotenv").config()
 const path = require(`path`)
-const { AIRTABLE_TABLE_NAME: tableName } = process.env
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-
-  return new Promise((resolve, reject) => {
-    graphql(`
+  return new Promise(async (resolve) => {
+    const result = await graphql(`
       {
-        allAirtable(filter: { table: { eq: "${tableName}" } }) {
-          nodes {
-            data {
-              slug
+        allAirtable {
+          edges {
+            node {
+              table
+              recordId
             }
           }
         }
       }
-    `).then(({ errors, data }) => {
-      if (errors) {
-        reject(errors)
-      }
-
-      const component = path.resolve(`./src/templates/single-item.jsx`)
-
-      data.allAirtable.nodes.map(({ data: { slug } }) => {
-        createPage({
-          component,
-          context: { slug },
-          path: `/${slug}`,
-        })
+    `)
+    // For each path, create page and choose a template.
+    // values in context Object are available in that page's query
+    result.data.allAirtable.edges.forEach(({ node }) => {
+      createPage({
+        path: `/entrepreneurship/${node.recordId}`,
+        component: path.resolve(`./src/templates/entrepreneurship.js`),
+        context: {
+          recordId: node.recordId,
+        },
       })
-
-      resolve()
     })
-  })
-}
-
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage } = actions
-
-  createPage({
-    ...page,
-    context: {
-      ...page.context,
-      tableName,
-    },
+    resolve()
   })
 }

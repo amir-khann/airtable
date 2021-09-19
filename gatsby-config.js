@@ -9,7 +9,7 @@ module.exports = {
       twitter: "https://www.twitter.com",
     },
     locale: "en",
-    title: "Travel destinations",
+    title: "Startup vs Covid-19",
   },
   plugins: [
     {
@@ -52,9 +52,8 @@ module.exports = {
         apiKey: process.env.AIRTABLE_API_KEY,
         tables: [
           {
-            baseId: process.env.AIRTABLE_BASE_ID,
-            tableName: process.env.AIRTABLE_TABLE_NAME,
-            mapping: { image: "fileNode" },
+            baseId: `appr5VE0GKT47L2U3`,
+            tableName: `Entrepreneurship`,
           },
         ],
       },

@@ -13,11 +13,17 @@ module.exports = {
     },
     extend: {
       colors: {
-        gray: colors.trueGray,
-        blue: colors.lightBlue,
+        header: "rgb(41, 42, 62)",
+        logo: "#c47aff",
+        button: "#6b3e8e",
+        nav: "rgba(51,51,51, 0.75)",
+        cardBlue: "rgb(73, 83, 238)",
       },
       fontSize: {
         xxs: "0.625rem",
+      },
+      maxWidth: {
+        custom: "65rem",
       },
       maxHeight: {
         48: "12rem",
@@ -28,5 +34,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 }
