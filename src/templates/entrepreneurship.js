@@ -2,14 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 //
 
-import EntrepreneurshipCard from "../components/EntrepreneurshipCard"
+import EntrepreneurshipDetailCard from "../components/e-detail-card"
 import Layout from "../components/Layout"
 
 const Entrepreneurship = ({ data }) => {
   const detail = data.airtable.data
   return (
     <Layout>
-      <EntrepreneurshipCard rTruncate={false} {...detail} />
+      <EntrepreneurshipDetailCard rTruncate={false} {...detail} />
     </Layout>
   )
 }
@@ -23,22 +23,24 @@ export const query = graphql`
       table
       recordId
       data {
+        AdditionalOnElgiibility
         AgencyName
+        ApplyButton
         AwardCeiling
         AwardFloor
         CategoryofFundingActivity
-        CurrentClosingDateforApps
+        CurrentClosingDateforApp
         Description
         DocType
+        DetailPage
         EligibleApplicants
-        ExpNumOfAwards
         EstTotalProgramFunding
+        ExpNumOfAwards
         FundingOppTitle
         LinktoAdditionalnfo
         OGClosingDateforApp
         OppCategory
         OppCategoryExplanation
-        URL
       }
     }
   }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 //
-import EntrepreneurshipCard from "../components/EntrepreneurshipCard"
+import EntrepreneurshipCard from "../components/e-card"
 import Layout from "../components/Layout"
 import SiteMeta from "../components/SiteMeta"
 
@@ -42,22 +42,24 @@ export const query = graphql`
         id
         recordId
         data {
+          AdditionalOnElgiibility
           AgencyName
+          ApplyButton
           AwardCeiling
           AwardFloor
           CategoryofFundingActivity
-          CurrentClosingDateforApps
+          CurrentClosingDateforApp
           Description
           DocType
+          DetailPage
           EligibleApplicants
-          ExpNumOfAwards
           EstTotalProgramFunding
+          ExpNumOfAwards
           FundingOppTitle
           LinktoAdditionalnfo
           OGClosingDateforApp
           OppCategory
           OppCategoryExplanation
-          URL
         }
       }
     }

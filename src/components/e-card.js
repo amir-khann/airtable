@@ -6,39 +6,32 @@ const isTypeObj = (val) => {
 }
 
 function EntrepreneurshipCard({
-  FundingOppTitle,
+  ApplyButton,
+  CurrentClosingDateforApp,
   Description,
-  CurrentClosingDateforApps,
   EstTotalProgramFunding,
-  LinktoAdditionalnfo,
-  rTruncate,
+  FundingOppTitle,
 }) {
   return (
     <div
-      className={`text-gray-400 text-md overflow-hidden tracking-wider p-5 flex flex-col shadow-md bg-white ${
-        rTruncate ? "h-full" : ""
-      }`}
+      className={
+        "h-full text-gray-400 text-md overflow-hidden tracking-wider p-5 flex flex-col shadow-md bg-white"
+      }
     >
       <div className="py-2">
         <div className="py-2 uppercase text-xxs">Title</div>
-        <h2
-          className={`text-cardBlue font-semibold ${
-            rTruncate ? "line-clamp-1" : ""
-          }`}
-        >
+        <h2 className="text-cardBlue font-semibold line-clamp-1">
           {FundingOppTitle ? FundingOppTitle : "N/A"}
         </h2>
       </div>
       <div className="py-2">
-        <div className="py-2 uppercase text-xxs">Details</div>
-        <span className={`text-gray-600 ${rTruncate ? "line-clamp-3" : ""}`}>
-          {Description}
-        </span>
+        <div className="py-2 uppercase text-xxs">Description</div>
+        <span className={"text-gray-600 line-clamp-3"}>{Description}</span>
       </div>
       <div className="py-2">
         <div className="py-2 uppercase text-xxs">Closing Date</div>
-        <span className={`text-gray-600`}>
-          {CurrentClosingDateforApps ? CurrentClosingDateforApps : "N/A"}
+        <span className={`text-gray-600 line-clamp-3`}>
+          {CurrentClosingDateforApp ? CurrentClosingDateforApp : "N/A"}
         </span>
       </div>
       <div className="py-2">
@@ -52,10 +45,13 @@ function EntrepreneurshipCard({
         </span>
       </div>
       <div className="py-2">
-        <div className="py-2 uppercase text-xxs">Link to Additional Info</div>
-        <p className="text-gray-600 border-b-2 truncate hover:border-gray-500">
-          {LinktoAdditionalnfo}
-        </p>
+        <div className="py-2 uppercase text-xxs">Link to Apply</div>
+        <a
+          href={ApplyButton}
+          className="text-gray-600  transition duration-150 ease-in border-b-2 block truncate hover:border-gray-500"
+        >
+          {ApplyButton}
+        </a>
       </div>
     </div>
   )
