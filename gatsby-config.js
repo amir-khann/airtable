@@ -52,8 +52,12 @@ module.exports = {
         apiKey: process.env.AIRTABLE_API_KEY,
         tables: [
           {
-            baseId: `appr5VE0GKT47L2U3`,
-            tableName: `Entrepreneurship`,
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: process.env.ENTREPRENEURSHIP_TABLE,
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: process.env.DIVERSITY_TABLE,
           },
         ],
       },

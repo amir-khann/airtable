@@ -2,22 +2,22 @@ import React from "react"
 import { graphql } from "gatsby"
 //
 
-import DetailCard from "../components/e-detail-card"
+import DetailPage from "../components/e-detail-card"
 import Layout from "../components/Layout"
 
-const Entrepreneurship = ({ data }) => {
+const Diversity = ({ data }) => {
   const detail = data.airtable.data
   return (
     <Layout>
-      <DetailCard {...detail} />
+      <DetailPage {...detail} />
     </Layout>
   )
 }
 
-export default Entrepreneurship
+export default Diversity
 
 export const query = graphql`
-  query GetEntrepreneurshipRecord($recordId: String!) {
+  query GetDiversityRecord($recordId: String!) {
     airtable(recordId: { eq: $recordId }) {
       id
       table

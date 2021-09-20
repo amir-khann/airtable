@@ -6,10 +6,10 @@ import Layout from "../components/Layout"
 import SiteMeta from "../components/SiteMeta"
 
 export default ({ data }) => {
-  const entrepreneurshipData = data.allAirtable.nodes
+  const diversityData = data.allAirtable.nodes
   return (
     <Layout>
-      <SiteMeta title="Entrepreneurship" description="Entrepreneurship" />
+      <SiteMeta title="Diversity" description="Diversity" />
       <div className="flex justify-center items-center">
         <div className="max-w-3xl">
           <h4 className="text-center pb-12">
@@ -20,8 +20,8 @@ export default ({ data }) => {
         </div>
       </div>
       <div className="grid grid-cols-3 gap-8 place-content-stretch">
-        {entrepreneurshipData.map(({ data, recordId, id }) => (
-          <Link to={`/entrepreneurship/${recordId}`}>
+        {diversityData.map(({ data, recordId, id }) => (
+          <Link to={`/diversity/${recordId}`}>
             <EntrepreneurshipCard
               rTruncate={true}
               key={`key-${id}`}
@@ -36,7 +36,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allAirtable(filter: { table: { eq: "Entrepreneurship" } }) {
+    allAirtable(filter: { table: { eq: "Diversity" } }) {
       nodes {
         id
         recordId

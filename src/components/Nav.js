@@ -4,7 +4,7 @@ import { globalHistory } from "@reach/router"
 
 const navLinks = [
   { label: "Entrepreneurship", to: "/", include: "entrepreneurship" },
-  { label: "Programs", to: "/programs", include: "programs" },
+  { label: "Diversity", to: "/diversity", include: "diversity" },
   { label: "91s Boosters", to: "/boosters", include: "boosters" },
   { label: "Startups", to: "/startups", include: "startups" },
   { label: "Other Support", to: "/other-support", include: "other-support" },

@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "@reach/router"
 
 const isTypeObj = (val) => {
   if (typeof val === "object") return null
@@ -31,6 +32,28 @@ function EntrepreneurshipDetail({
         "w-full text-gray-400 text-md overflow-hidden tracking-wider p-5 flex flex-col shadow-md bg-white "
       }
     >
+      <button
+        type="button"
+        className="w-28 text-base text-logo justify-evenly items-center flex h-8 "
+        onClick={() => navigate(-1)}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#c47aff"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 16l-4-4m0 0l4-4m-4 4h18"
+          />
+        </svg>
+        Go Back
+      </button>
+
       <div className="py-2">
         <div className="py-2 uppercase text-xxs">Title</div>
         <h2 className={`text-cardBlue font-semibold `}>
