@@ -5,10 +5,22 @@ import { globalHistory } from "@reach/router"
 const navLinks = [
   { label: "Entrepreneurship", to: "/", include: "entrepreneurship" },
   { label: "Diversity", to: "/diversity", include: "diversity" },
-  { label: "91s Boosters", to: "/boosters", include: "boosters" },
-  { label: "Startups", to: "/startups", include: "startups" },
-  { label: "Other Support", to: "/other-support", include: "other-support" },
-  { label: "Resources", to: "/resources", include: "resources" },
+  {
+    label: "Venture Capital",
+    to: "/venture-capital",
+    include: "venture-capital",
+  },
+  { label: "Startup", to: "/startup", include: "startup" },
+  {
+    label: "Nonprofit",
+    to: "/nonprofit-organizations",
+    include: "nonprofit-organizations",
+  },
+  {
+    label: "Underrepresented",
+    to: "/underrepresented-founders",
+    include: "underrepresented-founders",
+  },
 ]
 
 const Nav = () => {

@@ -59,6 +59,22 @@ module.exports = {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: process.env.DIVERSITY_TABLE,
           },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: process.env.VENTURECAPITAL_TABLE,
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: process.env.STARTUP_TABLE,
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: process.env.NONPROFITORGANIZATIONS_TABLE,
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: process.env.UNDERREPRESENTEDFOUNDERS_TABLE,
+          },
         ],
       },
     },
