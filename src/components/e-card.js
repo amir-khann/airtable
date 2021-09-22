@@ -1,4 +1,5 @@
 import React from "react"
+import { numberWithCommas } from "../utils"
 
 const isTypeObj = (val) => {
   if (typeof val === "object") return null
@@ -41,7 +42,9 @@ function EntrepreneurshipCard({
             isTypeObj(EstTotalProgramFunding) ? "font-semibold" : ""
           }`}
         >
-          {isTypeObj(EstTotalProgramFunding) ? EstTotalProgramFunding : "N/A"}
+          {isTypeObj(EstTotalProgramFunding)
+            ? `$${numberWithCommas(EstTotalProgramFunding)}`
+            : "N/A"}
         </span>
       </div>
       <div className="py-2">

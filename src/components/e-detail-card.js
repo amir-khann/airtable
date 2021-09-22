@@ -1,5 +1,6 @@
 import React from "react"
 import { navigate } from "@reach/router"
+import { numberWithCommas } from "../utils"
 
 const isTypeObj = (val) => {
   if (typeof val === "object") return null
@@ -70,7 +71,9 @@ function EntrepreneurshipDetail({
       </div>
       <div className="py-2">
         <div className="py-2 uppercase text-xxs">Award Ceiling</div>
-        <span className={"text-gray-600"}>{AwardCeiling}</span>
+        <span className={"text-gray-600"}>
+          {AwardCeiling ? `$${numberWithCommas(AwardCeiling)}` : "N/A"}
+        </span>
       </div>
       <div className="py-2">
         <div className="py-2 uppercase text-xxs">Award Floor</div>
@@ -129,7 +132,9 @@ function EntrepreneurshipDetail({
             isTypeObj(EstTotalProgramFunding) ? "font-semibold" : ""
           }`}
         >
-          {isTypeObj(EstTotalProgramFunding) ? EstTotalProgramFunding : "N/A"}
+          {isTypeObj(EstTotalProgramFunding)
+            ? `$${numberWithCommas(EstTotalProgramFunding)}`
+            : "N/A"}
         </span>
       </div>
       <div className="py-2">
